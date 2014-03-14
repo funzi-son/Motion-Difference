@@ -1,0 +1,26 @@
+%% Script which resize weizmann data to NxN video frames
+
+
+N = 42;
+load classification_masks;
+actions = {'bend','jack','jump','pjump','run','side','skip','walk','wave1','wave2'};
+features = zeros(0,0);
+labels = zeros(0,0);
+clips = zeros(0,0);
+%% resize
+names = fieldnames(aligned_masks);
+for i=1:size(names,1)
+    video = getfield(original_masks,names{i});
+    frame_num = size(video,3);
+    v_r   = zeros(N,N,frame_num);
+    for j=1:frame_num
+        v_r(:,:,j) = imresize(video(:,:,j),[N N]);
+    end
+    clips = [clips;(size(features,1)+1) (size(features,1)+frame_num)];
+    features =  [features;reshape(v_r ,[N*N frame_num])'];   
+    labels   = [labels; find(~cellfun(@isempty,cellfun(@(x) strfind(char(names(i)),strcat('_',x)),actions,'Uniformoutput',false)))];
+%      view_clip(v_r,1);
+%      waitforbuttonpress;
+end
+save(strcat(dir,'org_weizmann_',num2str(N),'x',num2str(N),'_aligned_none.mat'),'features','clips','labels','actions');
+%% save features

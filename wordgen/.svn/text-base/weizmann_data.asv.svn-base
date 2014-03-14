@@ -1,0 +1,18 @@
+%% Script which resize weizmann data to NxN video frames
+
+N = 42;
+load classification_masks;
+
+%% resize
+names = fieldnames(original_masks);
+for i=1:size(names,1)
+    video = getfield(original_masks,names{i});
+    frame_num = size(video,3);
+    v_r   = zeros(N,N,frame_num);
+    for j=1:frame_num
+        v_r(:,:,j) = imresize(video(:,:,j),[N N]);
+    end
+     setfield(org_masks_rz,names(i
+%      view_clip(v_r,1);
+%      waitforbuttonpress;
+end

@@ -1,0 +1,5 @@
+actions: list of actions ('bend','jack','jump','pjump','run','side','skip','walk','wave1','wave2')
+clips: Nx2 array where clips(i,1:2) are start/end frame features of an action clip ( a clip i is sequence of frames features(clips(i,1):clips(i,2),:))
+features: MxF_SIZE, a features(i,:) is a frame of clip c if clips(c,1)<=i<=clips(c,2)
+labels: label of the clip, the action of clips c is actions(labels(i))
+vWords: visual words for each frame feature i.e. vWords(i) is visual words of frame features features(i,:)

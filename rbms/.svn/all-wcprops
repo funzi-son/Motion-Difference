@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/son/!svn/ver/5/trunk/pLSA_Act/code/src/rbms
+END
+training_rbm_.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/son/!svn/ver/5/trunk/pLSA_Act/code/src/rbms/training_rbm_.m
+END
+training_rbm.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/son/!svn/ver/5/trunk/pLSA_Act/code/src/rbms/training_rbm.m
+END
+training_brbm_.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/son/!svn/ver/5/trunk/pLSA_Act/code/src/rbms/training_brbm_.m
+END
+logistic.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/son/!svn/ver/5/trunk/pLSA_Act/code/src/rbms/logistic.m
+END

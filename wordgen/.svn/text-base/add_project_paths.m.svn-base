@@ -1,0 +1,11 @@
+%%%% Loading project paths
+%% load WEIZMANN dataset
+sys_str = computer();
+if ~isempty(findstr('',sys_str))
+    addpath(genpath('C:\Pros\Data\VIDEOS\WEIZMANN\Classifcation.Dataset'));
+elseif ~isempty(findstr('GLN',sys_str))
+    addpath(genpath('/home/funzi/My.Academic/My.Codes/DATA/ACTION.REG/WEIZMANN/Classification.Dataset'));
+else
+    fprintf('Cannot find paths\n');
+    return;
+end

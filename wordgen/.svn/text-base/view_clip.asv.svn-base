@@ -1,0 +1,13 @@
+function view_clip(clip_data,video)
+%% Display a sequence of sihoulette images
+figure();
+for i=1:clip_data(3)
+    if video==1
+        imshow(clip_data(:,:,i));
+        pause(0.0
+    else
+        
+    end
+end
+end
+

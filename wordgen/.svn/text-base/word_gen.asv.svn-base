@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This script convert clips into words
+%% sontran2013
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% define datafile, processing type
+dat_file = 'org_weizmann_42x42_none';
+wrd_file = 'C:\Pros\Data\VIDEOS\WEIZMANN\Classifcation.Dataset\org_weizmann_42x42_none_words.mat';
+FEATURE_LEARN = 0; % 0: no feature learning, 1: RBM, 2: DBN
+WORD_NUM      = 50; % Number of words
+%% load data
+load(dat_file);
+%% Get features & labels
+switch FEATURE_LEARN
+    case 1
+        % Training with RBM and return new features        
+%         features = 
+%         labels   = 
+%         postfix = 'rbm';
+    case 2
+        % Training with DBN and return new features
+%         features = 
+%         labels   = 
+%         postfix = 'dbn';    
+end
+
+opts = statset('Display','final');
+vWords = kmeans(features,WORD_NUM,...
+        'distance','sqEuclidean',...
+        'emptyaction','drop',...
+        'replicates',5,...
+        'options',opts);
+save(wrd_file,'clips','features','labels','actions','vWords');
