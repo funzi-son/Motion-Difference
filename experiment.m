@@ -1,5 +1,5 @@
+    addpath(genpath('.'));
     %% Generate word
-
     setting_file = 'weizmann_setting';
     fprintf('Generate visual words\n');
     word_gen_weizmann(setting_file);
